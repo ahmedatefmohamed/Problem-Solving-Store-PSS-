@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Problem1311A {
+
+    public static int moves;
+
+    public static int NumOfMoves(int a, int b) {
+
+        if (a - b < 0) {
+            if ((b - a) % 2 == 1) {
+                moves = 1;
+            } else {
+                moves = 2;
+            }
+        } else if (a == b) {
+            moves = 0;
+        } else {
+            if ((a - b) % 2 == 0) {
+                moves = 1;
+            } else {
+                moves = 2;
+            }
+        }
+        return moves;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int testCases, n1, n2;
+        testCases = in.nextInt();
+        for (int i = 0; i < testCases; i++) {
+            n1 = Math.abs(in.nextInt());
+            n2 = Math.abs(in.nextInt());
+            System.out.println(Problem1311A.NumOfMoves(n1, n2));
+        }
+
+    }
+
+}
