@@ -1,0 +1,57 @@
+import java.util.*;
+
+public class AChipsMoving {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int numberOfCoins = 0;
+        int numbersOfChips = s.nextInt();
+        int movesOfChips[] = new int[numbersOfChips];
+        int Sum[] = new int[numbersOfChips];
+
+        for (int i = 0; i < numbersOfChips; i++) {
+            movesOfChips[i] = s.nextInt();
+        }
+        for (int i = 0; i < numbersOfChips; i++) {
+            for (int j = 0; j < numbersOfChips; j++) {
+                if (i != j) {
+                    if ((movesOfChips[j] % 2 == 0 && movesOfChips[i] % 2 != 0)
+                            || (movesOfChips[j] % 2 != 0 && movesOfChips[i] % 2 == 0)) {
+                        numberOfCoins++;
+                    }
+                }
+                Sum[i] = numberOfCoins;
+            }
+            numberOfCoins = 0;
+        }
+        Arrays.sort(Sum);
+        System.out.println(Sum[0]);
+
+    }
+
+}
+//--------------------------------------------------------------------------------------------------
+/*
+int store[] = new int[ChipsNo];
+        store[j] = chip[j] & 1;
+
+        for (int i = 0; i < ChipsNo; i++) {
+            System.out.println("store[" + i + "]= " + store[i]);
+        }
+        System.out.println(ChipsNo - OddCounter);
+ */
+ /*
+        //insert total numbers of chips
+        byte ChipsNo = s.nextByte();
+        if (ChipsNo >= 1 && ChipsNo <= 100) {
+            byte chip[] = new byte[ChipsNo];
+            byte OddCounter = 0;
+            for (int j = 0; j < ChipsNo; j++) {
+                //insert each i th chip for its coordinate 
+                chip[j] = s.nextByte();
+                OddCounter += chip[j] & 1;
+            }
+            //give the minimum total number of coins required to move all n chips to 
+            System.out.println(Math.min(OddCounter, ChipsNo - OddCounter));
+        }*/
