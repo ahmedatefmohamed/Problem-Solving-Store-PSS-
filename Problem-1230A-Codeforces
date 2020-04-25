@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class ADawidAndBagsOfCandies {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int Eval;
+        int Canndies[] = new int[4];
+        for (int i = 0; i < 4; i++) {
+            Canndies[i] = s.nextInt();
+        }
+        Arrays.sort(Canndies);
+        
+        //Eval = Canndies[3] - Canndies[2] - Canndies[1];
+            Eval = Canndies[0] + Canndies[1] + Canndies[2];
+        if (Eval == Canndies[3]|| (Canndies[0]+Canndies[3]) == (Canndies[2]+Canndies[1])) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
