@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class MinimizeThePermutation {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int testCases, permSize, index, temp;
+        //testCases = s.nextInt();
+        //for (int i = 1; i <= testCases; i++) {
+
+        permSize = s.nextInt();
+        int pre_perm[] = new int[permSize];
+        int post_perm[] = new int[permSize];
+
+        for (int j = 0; j < permSize; j++) {
+            pre_perm[j] = s.nextInt();
+            if (pre_perm[j] >= 1 && pre_perm[j] <= permSize && (pre_perm[j] / permSize) <= 1) {
+                post_perm[j] = pre_perm[j];
+            }
+        }
+        for (int j = 0; j < (permSize - 1); j++) {
+            index = Math.abs(new Random().nextInt() % (permSize - 1));
+
+            temp = post_perm[index];
+            post_perm[index] = post_perm[index + 1];
+            post_perm[index + 1] = temp;
+
+            for (int i = 0; i < permSize; i++) {
+                System.out.println(post_perm[i]);
+            }
+            System.out.println("---------------------");
+
+        }
+
+        //}
+    }
+
+}
