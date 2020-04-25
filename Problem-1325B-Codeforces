@@ -1,0 +1,50 @@
+import java.util.*;
+//int t = sc.nextInt();
+//        while (t-- >= 1) {
+//            int n = sc.nextInt();
+//            long a[] = new  long[n];
+//            Set<Long> distinctElements = new HashSet<>();
+//            for (int i = 0; i < n; i++) {
+//                a[i] = sc.nextLong();
+//                distinctElements.add(a[i]);
+//            }
+//            System.out.println(distinctElements.size());
+//        }
+
+public class Problem1325B {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int testCases, arrLength, elements, counter;
+        Set<Long> arrElem = new HashSet<>();
+        //Set<Integer> arrElem = new LinkedHashSet<>();
+
+        testCases = in.nextInt();
+        for (int i = 0; i < testCases; i++) {
+            //arrElem.removeAll(arrElem);
+            //counter = 0;
+            arrLength = in.nextInt();
+            long[] arr = new long[arrLength];
+
+            for (int j = 0; j < arrLength; j++) {
+                //elements = in.nextInt();
+                arr[i] = in.nextInt();
+                arrElem.add(arr[i]);
+                //arrElem.add(elements);
+            }
+            //DebugLine >>>>> System.out.println(arrElem + " ");
+
+//            Iterator it = arrElem.iterator();
+//            while (it.hasNext()) {
+//                arr[i] = (int) it.next();
+//                //DebugLine >>>>> System.out.print(arr[i] + " ");
+//                counter++;
+//            }
+            System.out.println(arrElem.size());
+            //System.out.println(counter);
+        }
+
+    }
+
+}
