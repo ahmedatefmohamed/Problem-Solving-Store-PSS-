@@ -1,0 +1,42 @@
+package problem.pkg1300a;
+
+import java.util.*;
+
+public class Problem1300A {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int testCases, arrlength;
+        testCases = in.nextInt();
+        for (int i = 0; i < testCases; i++) {
+            int Sum = 0, Counter = 0, minStep;
+            arrlength = in.nextInt();
+            int arr[] = new int[arrlength];
+            for (int j = 0; j < arrlength; j++) {
+                arr[j] = in.nextInt();
+                if (arr[j] == 0) {
+                    Counter++;
+                }
+                Sum += arr[j];
+            }
+            if (Counter == 0) { //means no zeros at array, So product is non zero.
+                if (Sum == 0) {
+                    System.out.println("1");
+                } else {
+                    System.out.println("0");
+                }
+            } else {
+                minStep = Counter; //no.of zeros at array befor conversion [0 => 1]
+                Sum += Counter; //total sum at array after adding no.of zeros to previous sum
+                if (Sum == 0) {
+                    System.out.println(minStep + 1);
+                } else {
+                    System.out.println(minStep);
+                }
+            }
+        }
+
+    }
+
+}
